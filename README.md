@@ -10,7 +10,7 @@ Esta es una API RESTful construida con **Node.js**, **Express** y **PostgreSQL**
 - **Heroku**: Plataforma para desplegar la aplicación en la nube.
 - **Visual Studio Code**: Editor recomendado para desarrollo.
 
-# Desarrollado por  
+## Desarrollado por  
 Nelson Muñoz
 
 ## Requisitos
