@@ -1,5 +1,6 @@
 import { pool } from "../database/db.js";
 
+
 export const getUsers = async (req, res) =>{
     try {
 
@@ -34,7 +35,7 @@ export const createUser = async (req, res) =>{
     try {
         const data = req.body;
 
-        const { rows } = await pool.query("INSERT INTO usuario (nombre, email) values ($1, $2) RETURNING *;", [data.nombre, data.email]);
+        const { rows } = await pool.query("INSERT INTO usuario (nombre, apellido, edad, email, comentario) values ($1, $2, $3, $4, $5) RETURNING *;", [data.nombre, data.apellido, data.edad, data.email, data.comentario]);
 
         return res.status(200).json({ mensaje: "Usuario registrado.", usuario: rows[0] });
 
@@ -73,7 +74,7 @@ export const updateUser = async (req, res) =>{
 
         const data = req.body;
 
-        const { rows } = await pool.query("UPDATE usuario set nombre = $1, email = $2 WHERE id = $3;", [data.nombre, data.email, id]);
+        const { rows } = await pool.query("UPDATE usuario set nombre = $1, apellido = $2, edad = $3, email = $4, comentario = $5 WHERE id = $6 RETURNING*", [data.nombre, data.apellido, data.edad, data.email, data.comentario, id]);
 
         return res.json({ mensaje: "Usuario actualizado.", usuario:  rows[0] });
          
