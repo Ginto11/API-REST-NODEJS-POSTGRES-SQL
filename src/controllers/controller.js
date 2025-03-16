@@ -4,7 +4,7 @@ import { pool } from "../database/db.js";
 export const getUsers = async (req, res) =>{
     try {
 
-        const { rows } = await pool.query("SELECT * FROM usuario;");
+        const { rows } = await pool.query("SELECT * FROM usuario ORDER BY id desc;");
         res.json(rows);
 
     } catch (error) {

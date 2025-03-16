@@ -1,4 +1,4 @@
-# API REST con Node.js, Express, PostgreSQL y Despliegue en Heroku
+# API REST con Node.js, Express y PostgreSQL
 
 Esta es una API RESTful construida con **Node.js**, **Express** y **PostgreSQL**. La API se realizo para ser desplegada en **Heroku** y es recomendable utilizar **Visual Studio Code** para el desarrollo. 
 
