@@ -4,18 +4,18 @@ import { getUsers, getUserById, createUser, deleteUser, updateUser } from "../co
 const userRouter = Router();
 
 //METODO HTTP GET
-userRouter.get("/usuarios", getUsers);
+userRouter.get("/api/usuarios", getUsers);
 
 //METODO HTPP GET
-userRouter.get("/usuario/:id", getUserById);
+userRouter.get("/api/usuario/:id", getUserById);
 
 //METODO HTTP POST
-userRouter.post("/usuario", createUser);
+userRouter.post("/api/usuario", createUser);
 
 //METODO HTTP DELETE
-userRouter.delete("/usuario/:id", deleteUser);
+userRouter.delete("/api/usuario/:id", deleteUser);
 
 //METODO HTTP PUT 
-userRouter.put("/usuario/:id", updateUser);
+userRouter.put("/api/usuario/:id", updateUser);
 
 export default userRouter;
