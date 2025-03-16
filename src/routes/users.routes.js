@@ -4,7 +4,7 @@ import { getUsers, getUserById, createUser, deleteUser, updateUser } from "../co
 const userRouter = Router();
 
 //METODO HTTP GET
-userRouter.get("/api/usuarios", getUsers);
+userRouter.get("/api/usuarios/:page", getUsers);
 
 //METODO HTPP GET
 userRouter.get("/api/usuario/:id", getUserById);
