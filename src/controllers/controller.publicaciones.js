@@ -44,7 +44,7 @@ export const createPublicacion = async (req, res) =>{
     try {
         const data = req.body;
 
-        const { rows } = await pool.query("INSERT INTO publicacion (nombre, apellido, edad, email, comentario, fecha_registro) values ($1, $2, $3, $4, $5, now()) RETURNING *;", [data.nombre, data.apellido, data.edad, data.email, data.comentario]);
+        const { rows } = await pool.query("INSERT INTO publicacion (nombre, apellido, edad, email, comentario, fecha_registro, fecha_actualizacion) values ($1, $2, $3, $4, $5, now(), now()) RETURNING *;", [data.nombre, data.apellido, data.edad, data.email, data.comentario]);
 
         return res.status(200).json({ mensaje: "Publicación registrada.", publicacion: rows[0] });
 
@@ -87,9 +87,9 @@ export const updatePublicacion = async (req, res) =>{
 
         const { rows } = await pool.query("UPDATE publicacion set nombre = $1, apellido = $2, edad = $3, email = $4, comentario = $5, fecha_actualizacion = now() WHERE id = $6 RETURNING*", [data.nombre, data.apellido, data.edad, data.email, data.comentario, id]);
 
-        return res.json({ mensaje: "Publicación actualizada.", usuario:  rows[0] });
+        return res.json({ mensaje: "Publicación actualizada.", publicacion:  rows[0] });
          
     } catch (error) {
-        res.status(500).json({ mensaje: `UPS! hubo un problema al eliminar la publicacíon ${id}`, error: err });
+        res.status(500).json({ mensaje: `UPS! hubo un problema al actualzizar la publicacíon ${id}`, error: err });
     }
 }
