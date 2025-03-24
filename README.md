@@ -103,9 +103,9 @@ https://nombre-de-tu-aplicacion.herokuapp.com/
 
 ## Endpoints de la API
 
-### `GET /api/usuarios`
+### `GET /api/publicaciones`
 
-Obtiene todos los usuarios registrados.
+Obtiene todas las publicaciones registradas.
 
 **Respuesta:**
 ```json
@@ -113,27 +113,38 @@ Obtiene todos los usuarios registrados.
 {
  "id": 1,
  "nombre": "Juan",
- "email": "juan@example.com"
+ "apellido": "Fernandez",
+ "email": "juan@example.com",
+ "comentario": "Ejemplo",
+ "fecha_registro": "2025-03-24T21:27:35.973Z"
 },
 ...
 ]
 ```
 
-### `POST /api/usuario`
-Crea un nuevo usuario.
+### `POST /api/publicacion`
+Crea una nueva publicación.
 Cuerpo de la solicitud:
 ```
 {
   "nombre": "Ana",
-  "email": "ana@example.com"
+  "apellido": "Montoya",
+  "email": "ana@example.com",
+  "comentario": "Hola soy ana"
+  "fecha_registro": "fecha actual"
 }
 ```
 Respuesta:
 ```
 {
-  "id": 2,
-  "nombre": "Ana",
-  "email": "ana@example.com"
+  "mensaje": "Publicación registrada."
+  "publicacion": {
+    "id": 2,
+    "nombre": "Ana",
+    "email": "ana@example.com",
+    "comentario": "Hola soy ana"
+    "fecha_registro": "fecha actual"
+  }
 }
 ```
 

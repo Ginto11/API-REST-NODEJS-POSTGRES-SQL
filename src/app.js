@@ -1,6 +1,6 @@
 import express from 'express';
 import { PORT_LOCAL } from './config.js';
-import  userRouter  from './routes/users.routes.js';
+import  userRouter  from './routes/publicaciones.routes.js';
 import morgan from 'morgan';
 import cors from 'cors'
 
